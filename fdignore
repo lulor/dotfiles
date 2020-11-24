@@ -1,0 +1,11 @@
+Library
+*.musiclibrary
+*.photoslibrary
+*.tvlibrary
+.*
+!.config
+!.fdignore
+!.gitignore
+!.zshrc
+!.bashrc
+!.vimrc

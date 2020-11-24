@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Create necessary files for ccls to work in a c/cpp project
+
+which trash &> /dev/null
+if [ $? = 0 ]; then
+	RM=trash
+else
+	RM=rm
+fi
+
+if [ $# = 0 ]; then
+	touch .ccls
+	cp $HOME/.config/clang/clang-format .clang-format
+elif [ $1 = "clean" ]; then
+	$RM .ccls
+	$RM .clang-format
+else
+	echo "Unknown option \"$1\""
+	echo "Usage: cinit [clean]"
+	exit 1
+fi

@@ -1,0 +1,51 @@
+#!/bin/bash
+
+CWD=$(pwd)
+DIR="$HOME/Documents/Notes"
+FOLDER="generali"
+
+if [ ! -d $DIR ]; then
+	echo "ERROR: '$DIR' does not exist"
+	exit 1
+fi
+
+if [ $# = 0 ]; then
+	NAME=$(date | cut -d ' ' -f 2,4,5 | tr ' ' '_')
+elif [ $# -gt 1 ]; then
+	echo "Usage: note [name|-up|-h]"
+	exit 1
+else
+	# Update git repo
+	if [ "$1" = "-up" ]; then
+		printf "This will stage and commit all the changes, pushing to remote, do you want to proceed [y/N]? "
+		read ANS
+		if [ "$ANS" != "y" ]; then
+			echo "Aborted"
+			exit 0
+		fi
+		cd $DIR && git pull && git add -A && git commit -m "update" && git push
+		STATUS=$?
+		cd $CWD
+		exit $STATUS
+	# Print help
+	elif [ "$1" = "-h" ]; then
+		echo "Usage: note [folder:][name|-up|-h]"
+		exit 0
+	fi
+
+	echo $1 | grep ':' &> /dev/null
+	if [ $? = 1 ]; then
+		NAME=$1
+	else
+		FOLDER=$(echo $1 | cut -d ':' -f 1)
+		NAME=$(echo $1 | cut -d ':' -f 2)
+	fi
+fi
+
+cd $DIR
+
+[ ! -d $FOLDER ] && mkdir $FOLDER
+
+nvim $FOLDER/${NAME}.md
+
+cd $CWD
