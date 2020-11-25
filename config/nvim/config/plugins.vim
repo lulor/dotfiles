@@ -63,13 +63,13 @@ nnoremap <silent> <leader>o  <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>f  <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <leader>d  <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
-nnoremap <silent> <leader>l  <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap <silent> <leader>n  <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> <leader>p  <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <leader>s  <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <leader>ci <cmd>lua vim.lsp.buf.incoming_calls()<CR>
 nnoremap <silent> <leader>co <cmd>lua vim.lsp.buf.outgoing_calls()<CR>
+autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 
 " Highlight & Signs
 sign define LspDiagnosticsSignError text=✘
