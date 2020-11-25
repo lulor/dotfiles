@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $# -eq 0 ] ; then
+    interval=1000
+elif [ $# -gt 1 ] ; then 
+    echo "Usage: $(basename $0) [interval]"
+    exit 1
+else
+    case $1 in
+        ''|*[!0-9]*)
+            echo "Usage: $(basename $0) [interval]"
+            exit 1
+            ;;
+        *)
+            interval=$((1000*$1))
+            ;;
+    esac
+fi
+
+powermetrics -i $interval | grep --color -i "fan\|temperature\|package power\|system average frequency"
