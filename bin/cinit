@@ -12,11 +12,11 @@ fi
 if [ $# = 0 ]; then
 	touch .ccls
 	cp $HOME/.config/clang/clang-format .clang-format
-elif [ $1 = "clean" ]; then
+elif [ $1 = "clear" ]; then
 	$RM .ccls
 	$RM .clang-format
 else
 	echo "Unknown option \"$1\""
-	echo "Usage: cinit [clean]"
+	echo "Usage: cinit [clear]"
 	exit 1
 fi
