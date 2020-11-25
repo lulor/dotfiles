@@ -2,7 +2,7 @@
 
 let mapleader=","
 
-nnoremap <silent> <leader>l :set relativenumber!<CR>
+nnoremap <silent> <leader>rl :set relativenumber!<CR>
 
 " Improve navigation
 noremap <C-J> 15j
@@ -21,3 +21,11 @@ nnoremap <silent> <leader>v :vsplit<CR>
 
 " Change directory to current file and PWD
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+" Map [ and ] directly
+nmap è [
+nmap + ]
+omap è [
+omap + ]
+xmap è [
+xmap + ]

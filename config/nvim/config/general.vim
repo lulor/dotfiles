@@ -9,6 +9,7 @@ filetype plugin indent on
 set hidden
 set lazyredraw
 set mouse+=a
+set signcolumn=yes
 
 " --- Tabs/Spaces ---
 set expandtab   
