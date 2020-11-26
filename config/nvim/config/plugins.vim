@@ -26,7 +26,7 @@ colorscheme srcery
 set updatetime=1000
 
 
-" ==== Nvim-lsp ====
+" ==== nvim-lsp ====
 
 lua << EOF
     -- Diagnostic
@@ -52,14 +52,14 @@ lua << EOF
 EOF
 
 " Keybindings
-nnoremap <silent> K          <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gi         <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> gW         <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd         <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gD         <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> 1gD        <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr         <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> <leader>o  <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>f  <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <leader>d  <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
@@ -76,13 +76,13 @@ sign define LspDiagnosticsSignError text=✘
 sign define LspDiagnosticsSignWarning text=▲
 sign define LspDiagnosticsSignInformation text=✸
 sign define LspDiagnosticsSignHint text=➤
-hi! link LspDiagnosticsSignError SrceryRed
-hi! link LspDiagnosticsSignWarning SrceryBrightOrange
-hi! link LspDiagnosticsSignInformation SrceryYellow
-hi! link LspDiagnosticsSignHint SrceryBlue
+hi! link LspDiagnosticsDefaultError SrceryRed
+hi! link LspDiagnosticsDefaultWarning SrceryBrightOrange
+hi! link LspDiagnosticsDefaultInformation SrceryYellow
+hi! link LspDiagnosticsDefaultHint SrceryBlue
 
 
-" ==== Completion-nvim ====
+" ==== completion-nvim ====
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
