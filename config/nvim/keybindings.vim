@@ -2,6 +2,7 @@
 
 let mapleader=","
 
+" Relative line numbers
 nnoremap <silent> <leader>l :set relativenumber!<CR>
 
 " Improve navigation

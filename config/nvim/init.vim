@@ -1,8 +1,8 @@
 if !exists('g:vscode')
-    runtime! config/general.vim
-    runtime! config/keybindings.vim
-    runtime! config/plugged.vim
-    runtime! config/plugins.vim
+    source $HOME/.config/nvim/general.vim
+    source $HOME/.config/nvim/keybindings.vim
+    source $HOME/.config/nvim/plugged.vim
+    source $HOME/.config/nvim/plugins.vim
 else
     noremap <C-J> 15j
     noremap <C-K> 15k

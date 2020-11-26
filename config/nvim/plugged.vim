@@ -1,4 +1,4 @@
-" ===== VIM-PLUG ====
+" ==== VIM-PLUG ====
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'srcery-colors/srcery-vim'

@@ -11,24 +11,24 @@ set lazyredraw
 set mouse+=a
 set signcolumn=yes
 
-" --- Tabs/Spaces ---
+" ==== Tabs/Spaces ====
 set expandtab   
 set shiftwidth=4
 set softtabstop=4
 " set tabstop=4
 
-" --- Folding ---
+" ==== Folding ====
 set foldmethod=syntax
 set foldlevel=99
 
-" --- Indent Guides ---
+" ==== Indent Guides ====
 " set listchars=tab:\|\ 
 " autocmd FileType sh,c,cpp,make,python,java,go,xml,css,javascript,json set list
 
-" --- System Clipboard ---
-set clipboard=unnamed
+" ==== System Clipboard ====
+" set clipboard=unnamed
 
-" --- Italic for Terminal.app ---
+" ==== Italic for Terminal.app ====
 " let &t_ZH="\e[3m"
 " let &t_ZR="\e[23m"
 

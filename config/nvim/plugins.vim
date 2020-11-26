@@ -1,3 +1,5 @@
+" Plugins specific configurations
+
 " ==== Fzf ====
 set rtp+=/usr/local/opt/fzf
 nnoremap <silent> - :Files<CR>
@@ -25,31 +27,9 @@ colorscheme srcery
 " ==== Signify ====
 set updatetime=1000
 
-
 " ==== nvim-lsp ====
-
-lua << EOF
-    -- Diagnostic
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics, {
-            virtual_text = false,
-            signs = true,
-            update_in_insert = false,
-        }
-    )
-
-    -- Language Servers
-    local lspconfig = require'lspconfig'
-    lspconfig.ccls.setup {
-        on_attach=require'completion'.on_attach;
-        root_dir = lspconfig.util.root_pattern(".ccls", "compile_commands.json", "compile_flags.txt", ".git");
-        init_options = {
-            cache = {
-                directory = ""
-            };
-        };
-    }
-EOF
+lua require('lsp')
+lua require('diagnostic')
 
 " Keybindings
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
@@ -80,7 +60,6 @@ hi! link LspDiagnosticsDefaultError SrceryRed
 hi! link LspDiagnosticsDefaultWarning SrceryBrightOrange
 hi! link LspDiagnosticsDefaultInformation SrceryYellow
 hi! link LspDiagnosticsDefaultHint SrceryBlue
-
 
 " ==== completion-nvim ====
 
