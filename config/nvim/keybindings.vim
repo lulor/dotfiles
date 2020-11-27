@@ -9,6 +9,14 @@ nnoremap <silent> <leader>l :set relativenumber!<CR>
 noremap <C-J> 15j
 noremap <C-K> 15k
 
+" Map [ and ] directly
+nmap è [
+nmap + ]
+omap è [
+omap + ]
+xmap è [
+xmap + ]
+
 " Copy to clipboard
 vnoremap <leader>y "*y
 nnoremap <leader>Y "*yg_
