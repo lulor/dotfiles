@@ -12,10 +12,10 @@ set mouse+=a
 set signcolumn=yes
 
 " ==== Tabs/Spaces ====
-set expandtab   
-set shiftwidth=4
+set tabstop=4
 set softtabstop=4
-" set tabstop=4
+set shiftwidth=4
+set expandtab   
 
 " ==== Folding ====
 set foldmethod=syntax
