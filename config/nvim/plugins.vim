@@ -4,7 +4,7 @@
 set rtp+=/usr/local/opt/fzf
 nnoremap <silent> - :Files<CR>
 nnoremap <silent> _ :Files ~<CR>
-nnoremap <silent> ò :Buffers<CR>
+nnoremap <silent> ù :Buffers<CR>
 nnoremap <silent> <Space> :Commands<CR>
 
 " ==== Lightline ====
