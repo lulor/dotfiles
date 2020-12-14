@@ -10,6 +10,7 @@ set hidden
 set lazyredraw
 set mouse+=a
 set signcolumn=yes
+set ignorecase
 
 " ==== Tabs/Spaces ====
 set tabstop=4
