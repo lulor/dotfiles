@@ -56,10 +56,6 @@ sign define LspDiagnosticsSignError text=✘
 sign define LspDiagnosticsSignWarning text=▲
 sign define LspDiagnosticsSignInformation text=✸
 sign define LspDiagnosticsSignHint text=➤
-hi! link LspDiagnosticsDefaultError SrceryRed
-hi! link LspDiagnosticsDefaultWarning SrceryBrightOrange
-hi! link LspDiagnosticsDefaultInformation SrceryYellow
-hi! link LspDiagnosticsDefaultHint SrceryBlue
 
 " ==== completion-nvim ====
 
