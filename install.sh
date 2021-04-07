@@ -18,13 +18,13 @@ cp fdignore $HOME/.fdignore
 cp -r config/nvim $CONFIG/
 cp -r config/clang $CONFIG/
 
+echo "Copying commands to $BIN..."
+cp bin/cinit $BIN/
+
 echo "Checking packages..."
 if [ "$(uname | grep -i darwin)" != "" ] ; then
 	OS="darwin"
 	echo "macOS detected"
-	figlet macOS 2> /dev/null
-	echo "Copying commands to $BIN..."
-	cp bin/* $BIN/
 	echo "Getting Srcery schemes..."
 	curl -sL https://github.com/lulor/srcery-terminal-app/raw/master/Srcery.terminal -O
 	curl -sL https://github.com/srcery-colors/srcery-terminal/raw/master/iterm/srcery_iterm.itermcolors -o Srcery.itermcolors
@@ -48,9 +48,6 @@ if [ "$(uname | grep -i darwin)" != "" ] ; then
 elif [ "$(uname | grep -i linux)" != "" ] ; then
 	OS="linux"
 	echo "Linux system detected, assuming Debian"
-	figlet Linux 2> /dev/null
-	echo "Copying commands to $BIN..."
-	cp bin/cinit $BIN/
 	for pkg in curl fzf fd-find neovim; do
 		echo "Checking $pkg..."
 		dpkg -s $pkg &> /dev/null
