@@ -14,8 +14,8 @@ set background=dark
 
 " --- Tabs/Spaces ---
 set expandtab   
-set shiftwidth=8
-set softtabstop=8
+set shiftwidth=4
+set softtabstop=4
 " set tabstop=8
 
 " --- Folding ---
