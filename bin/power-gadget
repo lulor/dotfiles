@@ -17,4 +17,8 @@ else
     esac
 fi
 
-powermetrics -i $interval | grep --color -i "fan\|temperature\|package power\|system average frequency"
+# Intel
+# powermetrics -i $interval | grep --color -i "fan\|temperature\|package power\|system average frequency"
+
+# Apple Silicon
+powermetrics -i $interval --samplers cpu_power,gpu_power | grep -v residency
