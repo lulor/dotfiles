@@ -72,6 +72,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # export CLICOLOR=1
 # export HOMEBREW_NO_AUTO_UPDATE=1
 # export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+# export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
 
 # ==== Linux ====
 # alias ls='ls --color'
