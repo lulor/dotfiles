@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh ub "fusermount -u /mnt/shared 2> /dev/null; sudo reboot"
