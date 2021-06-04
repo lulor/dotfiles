@@ -49,9 +49,9 @@ setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 
 # ==== ALIAS ====
-alias ll='ls -lh'
+alias ll='ls -l'
 alias la='ls -A'
-alias lla='ls -lhA'
+alias lla='ls -lA'
 alias grep='grep --color'
 alias gst='git status'
 
