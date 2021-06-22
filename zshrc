@@ -67,6 +67,7 @@ export VISUAL="nvim"
 export PATH="$HOME/.local/bin:$PATH"
 
 # ==== macOS ====
+# alias sleep-display='pmset displaysleepnow'
 # bindkey "^[[A" up-line-or-beginning-search # Up
 # bindkey "^[[B" down-line-or-beginning-search # Down
 # export CLICOLOR=1
